@@ -1,0 +1,936 @@
+{
+  "package_name": "requirement_experience_package",
+  "product_line": "Computing",
+  "version": "2.0",
+  "source_summary": {
+    "example_count": 1222,
+    "type_count": {
+      "IR": 6,
+      "SR": 176,
+      "AR": 1040,
+      "unknown": 0
+    },
+    "quality_count": {
+      "complete": 1023,
+      "sparse": 199
+    },
+    "linked_child_groups": 182
+  },
+  "field_mapping": {
+    "requirement_type": [
+      "需求类型",
+      "类型",
+      "级别",
+      "层级",
+      "IR需求分类",
+      "需求分类"
+    ],
+    "requirement_name": [
+      "需求名称",
+      "名称",
+      "标题",
+      "需求标题",
+      "IR需求标题",
+      "模块需求/规格标题"
+    ],
+    "requirement_description": [
+      "需求描述",
+      "需求描述(支持更新)",
+      "描述",
+      "IR需求描述",
+      "模块需求/规格描述"
+    ],
+    "business_id": [
+      "业务编号",
+      "业务编码",
+      "需求编号",
+      "编号",
+      "Item编码",
+      "业务编码",
+      "设计需求编号",
+      "模块规格编号"
+    ],
+    "parent_business_id": [
+      "父业务编号",
+      "父需求编号",
+      "父需求编码",
+      "父需求.编号",
+      "上级需求",
+      "关联需求"
+    ]
+  },
+  "writing_rules": {
+    "general_style": [
+      "条目式为主：多数描述用编号列表（1、2、3、）组织分项，便于逐项追溯。",
+      "先总后分：先一句概述范围/能力，再展开具体条件和参数。",
+      "偏正式技术语言，面向验证场景；SR 常以【模块类别】标签起头。",
+      "输出为纯文本，不使用任何 HTML/Markdown 标记（下游系统按纯文本解析）。"
+    ],
+    "type_rules": {
+      "IR": {
+        "completeness_checklist": [
+          {
+            "dimension": "结构/安装",
+            "occurrence_count": 3,
+            "sample_base": 6,
+            "required": true,
+            "source_examples": [
+              "EX-IR-000001",
+              "EX-IR-000002",
+              "EX-IR-000004"
+            ]
+          },
+          {
+            "dimension": "尺寸/重量/形态",
+            "occurrence_count": 2,
+            "sample_base": 6,
+            "required": false,
+            "source_examples": [
+              "EX-IR-000001",
+              "EX-IR-000006"
+            ]
+          },
+          {
+            "dimension": "计算/CPU/加速卡",
+            "occurrence_count": 2,
+            "sample_base": 6,
+            "required": false,
+            "source_examples": [
+              "EX-IR-000003",
+              "EX-IR-000004"
+            ]
+          },
+          {
+            "dimension": "认证/合规",
+            "occurrence_count": 2,
+            "sample_base": 6,
+            "required": false,
+            "source_examples": [
+              "EX-IR-000005",
+              "EX-IR-000006"
+            ]
+          },
+          {
+            "dimension": "芯片/器件",
+            "occurrence_count": 1,
+            "sample_base": 6,
+            "required": false,
+            "source_examples": [
+              "EX-IR-000006"
+            ]
+          },
+          {
+            "dimension": "散热",
+            "occurrence_count": 1,
+            "sample_base": 6,
+            "required": false,
+            "source_examples": [
+              "EX-IR-000006"
+            ]
+          }
+        ],
+        "structure_template": [
+          {
+            "order": 1,
+            "block": "结构/安装",
+            "required": true,
+            "guidance": "若本需求涉及该维度，用本节点已知信息说明；无具体值则标注'待补充'。",
+            "source_examples": [
+              "EX-IR-000001",
+              "EX-IR-000002",
+              "EX-IR-000004"
+            ]
+          },
+          {
+            "order": 2,
+            "block": "尺寸/重量/形态",
+            "required": false,
+            "guidance": "若本需求涉及该维度，用本节点已知信息说明；无具体值则标注'待补充'。",
+            "source_examples": [
+              "EX-IR-000001",
+              "EX-IR-000006"
+            ]
+          },
+          {
+            "order": 3,
+            "block": "计算/CPU/加速卡",
+            "required": false,
+            "guidance": "若本需求涉及该维度，用本节点已知信息说明；无具体值则标注'待补充'。",
+            "source_examples": [
+              "EX-IR-000003",
+              "EX-IR-000004"
+            ]
+          },
+          {
+            "order": 4,
+            "block": "认证/合规",
+            "required": false,
+            "guidance": "若本需求涉及该维度，用本节点已知信息说明；无具体值则标注'待补充'。",
+            "source_examples": [
+              "EX-IR-000005",
+              "EX-IR-000006"
+            ]
+          }
+        ],
+        "representative_examples": [
+          "EX-IR-000006",
+          "EX-IR-000001",
+          "EX-IR-000002",
+          "EX-IR-000003",
+          "EX-IR-000004"
+        ],
+        "typical_length": {
+          "avg_chars": 51,
+          "avg_points": 1.7,
+          "sample_size": 6
+        },
+        "avoid": [
+          "参考样例中的具体产品/单板/芯片型号、物料编码、标准号、认证名称、内部链接/dbox 地址、版本号，一律不得复用到新需求中。"
+        ]
+      },
+      "SR": {
+        "completeness_checklist": [
+          {
+            "dimension": "机柜/节点",
+            "occurrence_count": 52,
+            "sample_base": 110,
+            "required": false,
+            "source_examples": [
+              "EX-SR-000005",
+              "EX-SR-000027",
+              "EX-SR-000028"
+            ]
+          },
+          {
+            "dimension": "结构/安装",
+            "occurrence_count": 28,
+            "sample_base": 110,
+            "required": false,
+            "source_examples": [
+              "EX-SR-000003",
+              "EX-SR-000021",
+              "EX-SR-000024"
+            ]
+          },
+          {
+            "dimension": "散热",
+            "occurrence_count": 28,
+            "sample_base": 110,
+            "required": false,
+            "source_examples": [
+              "EX-SR-000022",
+              "EX-SR-000029",
+              "EX-SR-000033"
+            ]
+          },
+          {
+            "dimension": "内存/存储介质",
+            "occurrence_count": 20,
+            "sample_base": 110,
+            "required": false,
+            "source_examples": [
+              "EX-SR-000004",
+              "EX-SR-000007",
+              "EX-SR-000009"
+            ]
+          },
+          {
+            "dimension": "接口/连接器",
+            "occurrence_count": 18,
+            "sample_base": 110,
+            "required": false,
+            "source_examples": [
+              "EX-SR-000005",
+              "EX-SR-000009",
+              "EX-SR-000024"
+            ]
+          },
+          {
+            "dimension": "可靠性/老化",
+            "occurrence_count": 18,
+            "sample_base": 110,
+            "required": false,
+            "source_examples": [
+              "EX-SR-000005",
+              "EX-SR-000007",
+              "EX-SR-000009"
+            ]
+          },
+          {
+            "dimension": "认证/合规",
+            "occurrence_count": 18,
+            "sample_base": 110,
+            "required": false,
+            "source_examples": [
+              "EX-SR-000028",
+              "EX-SR-000034",
+              "EX-SR-000039"
+            ]
+          },
+          {
+            "dimension": "尺寸/重量/形态",
+            "occurrence_count": 14,
+            "sample_base": 110,
+            "required": false,
+            "source_examples": [
+              "EX-SR-000028",
+              "EX-SR-000040",
+              "EX-SR-000052"
+            ]
+          },
+          {
+            "dimension": "计算/CPU/加速卡",
+            "occurrence_count": 14,
+            "sample_base": 110,
+            "required": false,
+            "source_examples": [
+              "EX-SR-000039",
+              "EX-SR-000057",
+              "EX-SR-000058"
+            ]
+          },
+          {
+            "dimension": "功耗/电源",
+            "occurrence_count": 12,
+            "sample_base": 110,
+            "required": false,
+            "source_examples": [
+              "EX-SR-000005",
+              "EX-SR-000019",
+              "EX-SR-000026"
+            ]
+          },
+          {
+            "dimension": "芯片/器件",
+            "occurrence_count": 12,
+            "sample_base": 110,
+            "required": false,
+            "source_examples": [
+              "EX-SR-000024",
+              "EX-SR-000032",
+              "EX-SR-000033"
+            ]
+          },
+          {
+            "dimension": "存储/运输",
+            "occurrence_count": 9,
+            "sample_base": 110,
+            "required": false,
+            "source_examples": [
+              "EX-SR-000030",
+              "EX-SR-000039",
+              "EX-SR-000046"
+            ]
+          },
+          {
+            "dimension": "温度规格",
+            "occurrence_count": 4,
+            "sample_base": 110,
+            "required": false,
+            "source_examples": [
+              "EX-SR-000057",
+              "EX-SR-000063",
+              "EX-SR-000109"
+            ]
+          },
+          {
+            "dimension": "湿度规格",
+            "occurrence_count": 3,
+            "sample_base": 110,
+            "required": false,
+            "source_examples": [
+              "EX-SR-000015",
+              "EX-SR-000063",
+              "EX-SR-000117"
+            ]
+          },
+          {
+            "dimension": "功率/功放",
+            "occurrence_count": 3,
+            "sample_base": 110,
+            "required": false,
+            "source_examples": [
+              "EX-SR-000106",
+              "EX-SR-000141",
+              "EX-SR-000172"
+            ]
+          },
+          {
+            "dimension": "噪音",
+            "occurrence_count": 2,
+            "sample_base": 110,
+            "required": false,
+            "source_examples": [
+              "EX-SR-000057",
+              "EX-SR-000109"
+            ]
+          },
+          {
+            "dimension": "海拔",
+            "occurrence_count": 2,
+            "sample_base": 110,
+            "required": false,
+            "source_examples": [
+              "EX-SR-000063",
+              "EX-SR-000117"
+            ]
+          },
+          {
+            "dimension": "静电/ESD",
+            "occurrence_count": 1,
+            "sample_base": 110,
+            "required": false,
+            "source_examples": [
+              "EX-SR-000007"
+            ]
+          },
+          {
+            "dimension": "电池/BMS/输入保护",
+            "occurrence_count": 1,
+            "sample_base": 110,
+            "required": false,
+            "source_examples": [
+              "EX-SR-000130"
+            ]
+          },
+          {
+            "dimension": "逻辑/软件",
+            "occurrence_count": 1,
+            "sample_base": 110,
+            "required": false,
+            "source_examples": [
+              "EX-SR-000131"
+            ]
+          }
+        ],
+        "structure_template": [
+          {
+            "order": 1,
+            "block": "机柜/节点",
+            "required": false,
+            "guidance": "若本需求涉及该维度，用本节点已知信息说明；无具体值则标注'待补充'。",
+            "source_examples": [
+              "EX-SR-000005",
+              "EX-SR-000027",
+              "EX-SR-000028"
+            ]
+          },
+          {
+            "order": 2,
+            "block": "结构/安装",
+            "required": false,
+            "guidance": "若本需求涉及该维度，用本节点已知信息说明；无具体值则标注'待补充'。",
+            "source_examples": [
+              "EX-SR-000003",
+              "EX-SR-000021",
+              "EX-SR-000024"
+            ]
+          },
+          {
+            "order": 3,
+            "block": "散热",
+            "required": false,
+            "guidance": "若本需求涉及该维度，用本节点已知信息说明；无具体值则标注'待补充'。",
+            "source_examples": [
+              "EX-SR-000022",
+              "EX-SR-000029",
+              "EX-SR-000033"
+            ]
+          },
+          {
+            "order": 4,
+            "block": "内存/存储介质",
+            "required": false,
+            "guidance": "若本需求涉及该维度，用本节点已知信息说明；无具体值则标注'待补充'。",
+            "source_examples": [
+              "EX-SR-000004",
+              "EX-SR-000007",
+              "EX-SR-000009"
+            ]
+          },
+          {
+            "order": 5,
+            "block": "接口/连接器",
+            "required": false,
+            "guidance": "若本需求涉及该维度，用本节点已知信息说明；无具体值则标注'待补充'。",
+            "source_examples": [
+              "EX-SR-000005",
+              "EX-SR-000009",
+              "EX-SR-000024"
+            ]
+          },
+          {
+            "order": 6,
+            "block": "可靠性/老化",
+            "required": false,
+            "guidance": "若本需求涉及该维度，用本节点已知信息说明；无具体值则标注'待补充'。",
+            "source_examples": [
+              "EX-SR-000005",
+              "EX-SR-000007",
+              "EX-SR-000009"
+            ]
+          },
+          {
+            "order": 7,
+            "block": "认证/合规",
+            "required": false,
+            "guidance": "若本需求涉及该维度，用本节点已知信息说明；无具体值则标注'待补充'。",
+            "source_examples": [
+              "EX-SR-000028",
+              "EX-SR-000034",
+              "EX-SR-000039"
+            ]
+          },
+          {
+            "order": 8,
+            "block": "尺寸/重量/形态",
+            "required": false,
+            "guidance": "若本需求涉及该维度，用本节点已知信息说明；无具体值则标注'待补充'。",
+            "source_examples": [
+              "EX-SR-000028",
+              "EX-SR-000040",
+              "EX-SR-000052"
+            ]
+          },
+          {
+            "order": 9,
+            "block": "计算/CPU/加速卡",
+            "required": false,
+            "guidance": "若本需求涉及该维度，用本节点已知信息说明；无具体值则标注'待补充'。",
+            "source_examples": [
+              "EX-SR-000039",
+              "EX-SR-000057",
+              "EX-SR-000058"
+            ]
+          }
+        ],
+        "representative_examples": [
+          "EX-SR-000045",
+          "EX-SR-000005",
+          "EX-SR-000040",
+          "EX-SR-000056",
+          "EX-SR-000039"
+        ],
+        "typical_length": {
+          "avg_chars": 87,
+          "avg_points": 4.0,
+          "sample_size": 110
+        },
+        "avoid": [
+          "参考样例中的具体产品/单板/芯片型号、物料编码、标准号、认证名称、内部链接/dbox 地址、版本号，一律不得复用到新需求中。"
+        ]
+      },
+      "AR": {
+        "completeness_checklist": [
+          {
+            "dimension": "机柜/节点",
+            "occurrence_count": 260,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000035",
+              "EX-AR-000036",
+              "EX-AR-000046"
+            ]
+          },
+          {
+            "dimension": "结构/安装",
+            "occurrence_count": 256,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000006",
+              "EX-AR-000015",
+              "EX-AR-000018"
+            ]
+          },
+          {
+            "dimension": "接口/连接器",
+            "occurrence_count": 229,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000003",
+              "EX-AR-000005",
+              "EX-AR-000006"
+            ]
+          },
+          {
+            "dimension": "功耗/电源",
+            "occurrence_count": 194,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000003",
+              "EX-AR-000006",
+              "EX-AR-000008"
+            ]
+          },
+          {
+            "dimension": "计算/CPU/加速卡",
+            "occurrence_count": 187,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000056",
+              "EX-AR-000057",
+              "EX-AR-000058"
+            ]
+          },
+          {
+            "dimension": "尺寸/重量/形态",
+            "occurrence_count": 172,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000003",
+              "EX-AR-000020",
+              "EX-AR-000026"
+            ]
+          },
+          {
+            "dimension": "认证/合规",
+            "occurrence_count": 156,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000008",
+              "EX-AR-000011",
+              "EX-AR-000012"
+            ]
+          },
+          {
+            "dimension": "散热",
+            "occurrence_count": 153,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000012",
+              "EX-AR-000015",
+              "EX-AR-000023"
+            ]
+          },
+          {
+            "dimension": "内存/存储介质",
+            "occurrence_count": 98,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000001",
+              "EX-AR-000002",
+              "EX-AR-000003"
+            ]
+          },
+          {
+            "dimension": "芯片/器件",
+            "occurrence_count": 98,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000004",
+              "EX-AR-000005",
+              "EX-AR-000007"
+            ]
+          },
+          {
+            "dimension": "温度规格",
+            "occurrence_count": 83,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000014",
+              "EX-AR-000017",
+              "EX-AR-000027"
+            ]
+          },
+          {
+            "dimension": "存储/运输",
+            "occurrence_count": 76,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000044",
+              "EX-AR-000046",
+              "EX-AR-000071"
+            ]
+          },
+          {
+            "dimension": "可靠性/老化",
+            "occurrence_count": 57,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000007",
+              "EX-AR-000018",
+              "EX-AR-000022"
+            ]
+          },
+          {
+            "dimension": "功率/功放",
+            "occurrence_count": 37,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000018",
+              "EX-AR-000113",
+              "EX-AR-000165"
+            ]
+          },
+          {
+            "dimension": "电池/BMS/输入保护",
+            "occurrence_count": 33,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000004",
+              "EX-AR-000007",
+              "EX-AR-000010"
+            ]
+          },
+          {
+            "dimension": "腐蚀/三防",
+            "occurrence_count": 16,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000022",
+              "EX-AR-000064",
+              "EX-AR-000364"
+            ]
+          },
+          {
+            "dimension": "振动/冲击",
+            "occurrence_count": 16,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000044",
+              "EX-AR-000045",
+              "EX-AR-000046"
+            ]
+          },
+          {
+            "dimension": "射频指标",
+            "occurrence_count": 15,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000013",
+              "EX-AR-000113",
+              "EX-AR-000165"
+            ]
+          },
+          {
+            "dimension": "噪音",
+            "occurrence_count": 14,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000067",
+              "EX-AR-000082",
+              "EX-AR-000154"
+            ]
+          },
+          {
+            "dimension": "湿度规格",
+            "occurrence_count": 12,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000063",
+              "EX-AR-000074",
+              "EX-AR-000086"
+            ]
+          },
+          {
+            "dimension": "静电/ESD",
+            "occurrence_count": 11,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000043",
+              "EX-AR-000066",
+              "EX-AR-000086"
+            ]
+          },
+          {
+            "dimension": "逻辑/软件",
+            "occurrence_count": 11,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000113",
+              "EX-AR-000165",
+              "EX-AR-000199"
+            ]
+          },
+          {
+            "dimension": "频段/制式",
+            "occurrence_count": 7,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000046",
+              "EX-AR-000047",
+              "EX-AR-000071"
+            ]
+          },
+          {
+            "dimension": "参考文档/链接",
+            "occurrence_count": 5,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000012",
+              "EX-AR-000570",
+              "EX-AR-000731"
+            ]
+          },
+          {
+            "dimension": "海拔",
+            "occurrence_count": 5,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000268",
+              "EX-AR-000319",
+              "EX-AR-000627"
+            ]
+          },
+          {
+            "dimension": "时钟/同步",
+            "occurrence_count": 3,
+            "sample_base": 907,
+            "required": false,
+            "source_examples": [
+              "EX-AR-000083",
+              "EX-AR-000255",
+              "EX-AR-000546"
+            ]
+          }
+        ],
+        "structure_template": [
+          {
+            "order": 1,
+            "block": "机柜/节点",
+            "required": false,
+            "guidance": "若本需求涉及该维度，用本节点已知信息说明；无具体值则标注'待补充'。",
+            "source_examples": [
+              "EX-AR-000035",
+              "EX-AR-000036",
+              "EX-AR-000046"
+            ]
+          },
+          {
+            "order": 2,
+            "block": "结构/安装",
+            "required": false,
+            "guidance": "若本需求涉及该维度，用本节点已知信息说明；无具体值则标注'待补充'。",
+            "source_examples": [
+              "EX-AR-000006",
+              "EX-AR-000015",
+              "EX-AR-000018"
+            ]
+          },
+          {
+            "order": 3,
+            "block": "接口/连接器",
+            "required": false,
+            "guidance": "若本需求涉及该维度，用本节点已知信息说明；无具体值则标注'待补充'。",
+            "source_examples": [
+              "EX-AR-000003",
+              "EX-AR-000005",
+              "EX-AR-000006"
+            ]
+          },
+          {
+            "order": 4,
+            "block": "功耗/电源",
+            "required": false,
+            "guidance": "若本需求涉及该维度，用本节点已知信息说明；无具体值则标注'待补充'。",
+            "source_examples": [
+              "EX-AR-000003",
+              "EX-AR-000006",
+              "EX-AR-000008"
+            ]
+          },
+          {
+            "order": 5,
+            "block": "计算/CPU/加速卡",
+            "required": false,
+            "guidance": "若本需求涉及该维度，用本节点已知信息说明；无具体值则标注'待补充'。",
+            "source_examples": [
+              "EX-AR-000056",
+              "EX-AR-000057",
+              "EX-AR-000058"
+            ]
+          },
+          {
+            "order": 6,
+            "block": "尺寸/重量/形态",
+            "required": false,
+            "guidance": "若本需求涉及该维度，用本节点已知信息说明；无具体值则标注'待补充'。",
+            "source_examples": [
+              "EX-AR-000003",
+              "EX-AR-000020",
+              "EX-AR-000026"
+            ]
+          },
+          {
+            "order": 7,
+            "block": "认证/合规",
+            "required": false,
+            "guidance": "若本需求涉及该维度，用本节点已知信息说明；无具体值则标注'待补充'。",
+            "source_examples": [
+              "EX-AR-000008",
+              "EX-AR-000011",
+              "EX-AR-000012"
+            ]
+          },
+          {
+            "order": 8,
+            "block": "散热",
+            "required": false,
+            "guidance": "若本需求涉及该维度，用本节点已知信息说明；无具体值则标注'待补充'。",
+            "source_examples": [
+              "EX-AR-000012",
+              "EX-AR-000015",
+              "EX-AR-000023"
+            ]
+          }
+        ],
+        "representative_examples": [
+          "EX-AR-000964",
+          "EX-AR-000948",
+          "EX-AR-000950",
+          "EX-AR-000351",
+          "EX-AR-000507"
+        ],
+        "typical_length": {
+          "avg_chars": 93,
+          "avg_points": 3.8,
+          "sample_size": 907
+        },
+        "avoid": [
+          "参考样例中的具体产品/单板/芯片型号、物料编码、标准号、认证名称、内部链接/dbox 地址、版本号，一律不得复用到新需求中。"
+        ]
+      }
+    },
+    "anti_fabrication_rules": [
+      "具体数值/参数/规格只能来自待生成需求本节点的 name/description，不得凭空捏造。",
+      "祖先/兄弟/子节点、以及检索到的历史样例，只用于定位、保持父子一致、学习分解方式与措辞；其中的具体数值/型号/标准号一律不得搬到新需求里。",
+      "本节点缺某维度信息时，用保守表达（'{维度}以实际设计为准'/'待补充'），不假设、不编造。",
+      "输出纯文本，禁止任何 HTML 标签与 Markdown 标记。"
+    ]
+  },
+  "generation_guidance": {
+    "task_framing": "任务是：把本节点已知信息（name+description）按该类型常见结构组织成一段忠实、清晰的详细描述，覆盖该类型通常涉及的维度；对本节点没有给出具体值的维度，明确标注'待补充/以实际设计为准'，绝不编造。目标不是'把标题扩写成完整规格书'。",
+    "how_to_use": [
+      "按 requirement_type 取对应 type_rules；",
+      "用 structure_template 的 block 顺序决定'点到哪些维度'，只填本节点已知信息；",
+      "参考 representative_examples / 检索到的同域父子分解，学分几项、每项管什么、措辞口吻；",
+      "对照 completeness_checklist：required 维度若本节点无信息，标注缺口而非编造；",
+      "篇幅贴近 typical_length（真实均值），不硬凑长度。"
+    ]
+  }
+}

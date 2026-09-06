@@ -1,0 +1,27 @@
+{
+  "description": "匹配产品线 -> 经验包目录 的映射。用户给定的产品线在 packages/ 下找不到同名目录时，按 aliases 反查应使用哪个经验包。匹配时忽略大小写与 空格/下划线/连字符 差异。",
+  "source_file": "产品线匹配.xlsx",
+  "packages": {
+    "Wireless": {
+      "canonical_name": "Wireless",
+      "aliases": [
+        "Wireless"
+      ]
+    },
+    "Data_Communication": {
+      "canonical_name": "Data Communication",
+      "aliases": [
+        "Optical Business",
+        "Data Communication",
+        "Cloud Core Network"
+      ]
+    },
+    "Computing": {
+      "canonical_name": "Computing",
+      "aliases": [
+        "Data Storage",
+        "Computing"
+      ]
+    }
+  }
+}

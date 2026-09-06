@@ -1,0 +1,30 @@
+{
+  "description": "匹配产品线 -> 分类规则文件的映射。先匹配 packages 键或 canonical_name，再按 aliases 反查；匹配时忽略大小写与空格/下划线/连字符差异。aliases 与 requirement-description-generator/references/product_line_mapping.json 保持一致。",
+  "source_file": "产品线匹配.xlsx",
+  "packages": {
+    "Wireless": {
+      "canonical_name": "Wireless",
+      "rule_file": "无线产品线需求规则.json",
+      "aliases": [
+        "Wireless"
+      ]
+    },
+    "Data_Communication": {
+      "canonical_name": "Data Communication",
+      "rule_file": "网络产品线需求规则.json",
+      "aliases": [
+        "Optical Business",
+        "Data Communication",
+        "Cloud Core Network"
+      ]
+    },
+    "Computing": {
+      "canonical_name": "Computing",
+      "rule_file": "计算产品线需求规则.json",
+      "aliases": [
+        "Data Storage",
+        "Computing"
+      ]
+    }
+  }
+}
